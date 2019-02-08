@@ -4,13 +4,17 @@
   "private": true,
   "scripts": {
     "start": "npm run prod",
-    "dev": "NODE_ENV=development babel-node ./src/bin/www"
+    "dev": "NODE_ENV=development babel-node ./src/bin/www",
+    "prod": "npm run build && NODE_ENV=production node ./dist/bin/www",
+    "build": "npm run clean && babel ./src --out-dir dist",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "rimraf": "^2.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
