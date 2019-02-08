@@ -1,0 +1,8 @@
+# bin folder
+bin
+# build folder 
+build
+dist
+
+# exclude src
+!src/**
