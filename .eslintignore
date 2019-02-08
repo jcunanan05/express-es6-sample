@@ -6,12 +6,9 @@ build
 dist
 
 # test files
-__tests__
+/__tests__/**
 *.test.js
 *.spec.js
 
 # config files
 *.config.js
-
-# exclude src
-!src/**
