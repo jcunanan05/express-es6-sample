@@ -1,8 +1,12 @@
 # bin folder
 bin
+
 # build folder 
 build
 dist
+
+# config files
+*.config.js
 
 # exclude src
 !src/**
