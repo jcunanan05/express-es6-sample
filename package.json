@@ -6,7 +6,7 @@
     "start": "npm run prod",
     "dev": "NODE_ENV=development npm run watch ./src/bin/www",
     "prod": "npm run build && NODE_ENV=production node ./dist/bin/www",
-    "build": "npm run clean && babel ./src --out-dir dist",
+    "build": "npm run clean && babel ./src --config-file ./.babelrc --out-dir dist",
     "clean": "rimraf dist",
     "watch": "nodemon --config ./nodemon.json --"
   },
