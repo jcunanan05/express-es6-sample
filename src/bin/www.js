@@ -4,22 +4,24 @@
  * Module dependencies.
  */
 
-var app = require('../src/app');
-var debug = require('debug')('express-es6-sample:server');
-var http = require('http');
+import app from '../app';
+import debugLib from 'debug';
+import http from 'http';
+
+const debug = debugLib('express-es6-sample:server');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -63,6 +65,7 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
+      /* eslint-disable no-console */
       console.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;
@@ -82,5 +85,6 @@ function onError(error) {
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  console.log(`Listening on ${bind}`);
   debug('Listening on ' + bind);
 }

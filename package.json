@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run dev",
-    "dev": "babel-node ./bin/www"
+    "start": "npm run prod",
+    "dev": "NODE_ENV=development babel-node ./src/bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -13,6 +13,7 @@
     "morgan": "~1.9.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
