@@ -8,7 +8,9 @@
     "prod": "npm run build && NODE_ENV=production node ./dist/bin/www",
     "build": "npm run clean && babel ./src --config-file ./babel.config.js --out-dir dist",
     "clean": "rimraf dist",
-    "watch": "nodemon --config ./nodemon.json --"
+    "watch": "nodemon --config ./nodemon.json --",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
