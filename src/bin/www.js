@@ -8,20 +8,20 @@ import app from '../app';
 import debugLib from 'debug';
 import http from 'http';
 
-const debug = debugLib('express-es6-sample:server');
+const debug = debugLib('your-project-name:server');
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -65,7 +65,6 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      /* eslint-disable no-console */
       console.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;

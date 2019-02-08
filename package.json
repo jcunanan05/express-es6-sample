@@ -1,34 +1,28 @@
 {
-  "name": "express-es6-sample",
+  "name": "your-project-name",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "npm run prod",
-    "dev": "NODE_ENV=development npm run watch ./src/bin/www",
-    "prod": "npm run build && NODE_ENV=production node ./dist/bin/www",
-    "build": "npm run clean && babel ./src --config-file ./babel.config.js --out-dir dist",
+    "server": "babel-node ./src/bin/www",
+    "server:prod": "node ./dist/bin/www",
+    "dev": "NODE_ENV=development npm-run-all server",
     "clean": "rimraf dist",
-    "watch": "nodemon --config ./nodemon.json --",
-    "test": "jest",
-    "test:watch": "npm run test -- --watch"
+    "build": "babel ./src --out-dir dist",
+    "prod": "NODE_ENV=production npm-run-all clean build server:prod"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "morgan": "~1.9.0",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
-    "@babel/polyfill": "^7.2.5",
-    "@babel/preset-env": "^7.3.1",
-    "eslint": "^5.13.0",
-    "eslint-plugin-import": "^2.16.0",
-    "jest": "^24.1.0",
-    "nodemon": "^1.18.9",
-    "supertest": "^3.4.2"
+    "@babel/preset-env": "^7.3.1"
   }
 }
