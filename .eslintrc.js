@@ -15,7 +15,7 @@ module.exports = {
   rules: {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: ['error', 'always'],
+    semi: ['warning', 'always'],
     'import/no-commonjs': 'error'
   }
 };
