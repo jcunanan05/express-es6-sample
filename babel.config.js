@@ -1,15 +1,27 @@
 module.exports = api => {
-  const isTest = api.env('test');
+  const isTest = api.env("test");
 
   api.cache(true);
+
   // configs to load when testing environment
-  if (isTest)
+  const presets = [
+    [
+      "@babel/preset-env",
+      {
+        targets: {
+          node: "current"
+        }
+      }
+    ]
+  ];
+  if (isTest) {
     return {
-      presets: ['@babel/preset-env']
+      presets
     };
+  }
 
   return {
-    presets: ['@babel/preset-env'],
-    ignore: ['**/__tests__/**', '*.test.js', '*.spec.js']
+    presets,
+    ignore: ["**/__tests__/**", "*.test.js", "*.spec.js"]
   };
 };
