@@ -19,14 +19,28 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4"
   },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
   "nodemonConfig": {
     "exec": "npm run dev",
-    "watch": ["server/*", "public/*"],
-    "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
+    "watch": [
+      "server/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
   },
   "babel": {
-    "presets": ["@babel/preset-env"],
-    "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "scripts": {
     "start": "npm run prod",
@@ -36,6 +50,7 @@
     "prod": "NODE_ENV=production npm-run-all build server",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
-    "watch:dev": "nodemon"
+    "watch:dev": "nodemon",
+    "test": "jest"
   }
 }
