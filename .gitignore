@@ -2,7 +2,7 @@
 # Edit at https://www.gitignore.io/?templates=node,macos
 
 ## build folder
-dist
+dist-server
 build
 
 ### macOS ###
